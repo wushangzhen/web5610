@@ -3,63 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Websits List</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet"/>
 </head>
 <body>
-<nav class="navbar navbar-fixed-top cl-blue-navbar">
+<div class="container-fluid m-0 ">
     <div class="row">
-        <div class="col-xs-4 hidden-xs">
-            <div class="container-fluid">
-                <p class="navbar-text pull-left">
-                    <a href="website-list.html" class="navbar-link cl-text-white">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                </p>
+        <div class="col-4 p-0">
+            <nav class="navbar navbar-fixed-top bg-primary justify-content-start mb-3 p-0">
+                <a href="website-list.html" class="nav-item nav-link cl-text-white">
+                    <i class="fas fa-chevron-left fontawsome_icon"></i>
+                </a>
                 <a class="cl-text-white navbar-brand cl-text-bold" href="#">
                     Websites
                 </a>
-                <a href="#" class="navbar-link navbar-text pull-right cl-text-white cl-icon-padding">
-                    <span class="glyphicon glyphicon-plus"></span>
+                <a href="#" class="navbar-link navbar-text ml-auto cl-text-white cl-icon-padding">
+                    <span class="navblack fas fa-plus"></span>
                 </a>
-            </div>
+            </nav>
         </div>
-        <div class="col-xs-8">
-            <div class="container-fluid">
+        <div class="col-8 p-0">
+            <nav class="navbar navbar-fixed-top bg-primary justify-content-start mb-3 p-0">
                 <a class="cl-text-white navbar-brand cl-text-bold" href="#">
                     New Websites
                 </a>
-                <a href="website-list.html" class="navbar-link navbar-text pull-right cl-text-white cl-icon-padding">
-                    <span class="glyphicon glyphicon-ok"></span>
+                <a href="website-list.html" class="navbar-link navbar-text ml-auto cl-text-white cl-icon-padding">
+                    <span class="fas fa-check"></span>
                 </a>
-            </div>
+            </nav>
         </div>
     </div>
-</nav>
+</div>
 
 <div class="contain-fluid">
-    <div class="col-xs-4 hidden-xs">
-        <ul class="list-group cl-list-group-borderless">
+    <div class="row">
+        <div class="col-4">
+       <ul class="list-group cl-list-group-borderless">
             <li class="list-group-item cl-list-item-borderless">
-                <a href="website-edit.html"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+                <a href="website-edit.html"><span class="fas fa-cog fontawsome_icon float-right"></span></a>
                 <a href="page-list.html">Blogging App</a>
             </li>
             <li class="list-group-item cl-list-item-borderless">
-                <a href="website-edit.html"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+                <a href="website-edit.html"><span class="fas fa-cog fontawsome_icon float-right"></span></a>
                 <a href="page-list.html">Address Book App</a>
             </li>
             <li class="list-group-item cl-list-item-borderless">
-                <a href="website-edit.html"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+                <a href="website-edit.html"><span class="fas fa-cog fontawsome_icon float-right"></span></a>
                 <a href="page-list.html">Script Testing App</a>
             </li>
             <li class="list-group-item cl-list-item-borderless">
-                <a href="website-edit.html"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+                <a href="website-edit.html"><span class="fas fa-cog fontawsome_icon float-right"></span></a>
                 <a href="page-list.html">Blogger</a>
             </li>
         </ul>
     </div>
-    <div class="col-xs-8">
+    <div class="col-8">
         <form>
             <div class="form-group">
                 <label for="website-name">Name</label>
@@ -67,16 +68,17 @@
             </div>
             <div class="form-group">
                 <label for="website-description">Description</label>
-                <textarea id="website-description" class="form-control" rows="5" placeholder="Description"></textarea>
+                <textarea id="website-description" class="form-control" rows="3" placeholder="Description"></textarea>
             </div>
         </form>
     </div>
+    </div>
 </div>
 
-<nav class="navbar navbar-fixed-bottom cl-blue-navbar">
+<nav class="navbar fixed-bottom bg-primary navbar-dark justify-content-end">
     <div class="container-fuild">
-        <a href="profile.html" class="navbar-link navbar-text pull-right cl-text-white cl-icon-padding">
-            <span class="glyphicon glyphicon-user"></span>
+        <a href="profile.html" class="navbar-link navbar-text cl-icon-padding float-right">
+            <i class="fas fa-user fontawsome_icon"></i>
         </a>
     </div>
 </nav>

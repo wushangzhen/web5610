@@ -1,5 +1,5 @@
 body {
-    padding-top: 70px;
+    padding-top: 0px;
     padding-bottom: 70px;
 }
 input.form-control {
@@ -101,3 +101,12 @@ a:hover{
     z-index: 100;
     position: relative;
 }
+.centerdiv{
+    float:left;
+    width:50px;
+    border-right: 1px dashed black;
+    padding-bottom:1600px;  /*关键*/
+    margin-bottom:-1600px;  /*关键*/
+
+}
+
