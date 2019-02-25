@@ -1,0 +1,47 @@
+<form (ngSubmit)="editYoutube()" #z="ngForm">
+<nav class="navbar navbar-default navbar-fixed-top bg-light p-0">
+  <div class="navbar-text pull-left p-0">
+    <a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget" class="cl-text-black cl-icon-padding">
+      <span class="fas fa-chevron-left fontawsome_icon">
+      </span>
+    </a>
+    <a class="navbar-brand cl-text-black cl-text-bold" routerLink="./">
+      Widgets Edit
+    </a>
+  </div>
+  <div class="navbar-text pull-right">
+    <a (click)="editYoutube()" type="summit" class="cl-icon-padding cl-text-black">
+      <span class="fas fa-check fontawsome_icon">
+      </span>
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="form-group">
+      <label for="youtubeName">Name</label>
+      <input [ngModel]="widget.name" type="text" class="form-control" id="youtubeName" name="youtubeName" placeholder="Name" ngModel required #youtubeName="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="youtubeText">Text</label>
+      <input [ngModel]="widget.text" type="text" class="form-control" id="youtubeText" name="youtubeText" placeholder="Text" ngModel required #youtubeText="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="youtubeURL">URL</label>
+      <input [ngModel]="widget.url" type="text" class="form-control" id="youtubeURL" name="youtubeURL" placeholder="URL" ngModel required #youtubeURL="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="youtubeWidth">Width</label>
+      <input [ngModel]="widget.width" type="text" class="form-control" id="youtubeWidth" name="youtubeWidth" placeholder="100%" ngModel required #youtubeWidth="ngModel">
+    </div>
+  <a class="btn btn-danger btn-block" (click)="deleteWidget()">Delete</a>
+</div>
+
+<nav class="navbar fixed-bottom bg-primary navbar-dark justify-content-end p-0">
+  <div class="container-fuild">
+    <a routerLink="/profile/{{userId}}" class="navbar-link navbar-text cl-icon-padding ml-auto">
+      <i class="fas fa-user fontawsome_icon"></i>
+    </a>
+  </div>
+</nav>
+</form>

@@ -1,0 +1,61 @@
+<nav class="navbar navbar-default navbar-fixed-top bg-light p-0">
+  <div class="navbar-text pull-left p-0">
+    <a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget" class="cl-text-black cl-icon-padding">
+      <span class="fas fa-chevron-left fontawsome_icon">
+      </span>
+    </a>
+    <a class="navbar-brand cl-text-black cl-text-bold" routerLink="./">
+      Choose Widget
+    </a>
+  </div>
+</nav>
+
+<div class="container-fluid cl-container-padding">
+  <ul class="list-group cl-list-group-borderless">
+    <li class="list-group-item cl-list-item-borderless">
+      <a (click)="createNewHeader()">Header</a>
+    </li>
+    <li class="list-group-item cl-list-item-borderless">
+      <!--<a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}">{{widget.widgetType}}</a>-->
+      <a (click)="createNewYoutube()">Youtube</a>
+    </li>
+    <li class="list-group-item cl-list-item-borderless">
+      <!--<a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}">{{widget.widgetType}}</a>-->
+      <a (click)="createNewImage()">Image</a>
+    </li>
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a hrouterLink="./">Label</a>-->
+    <!--</li>-->
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a routerLink="./">HTML</a>-->
+    <!--</li>-->
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a routerLink="./">Text Input</a>-->
+    <!--</li>-->
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a routerLink="./">Link</a>-->
+    <!--</li>-->
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a routerLink="./">Button</a>-->
+    <!--</li>-->
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a href="widget-image.html">Image</a>-->
+    <!--</li>-->
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a href="widget-youtube.html">YouTube</a>-->
+    <!--</li>-->
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a routerLink="./">Data Table</a>-->
+    <!--</li>-->
+    <!--<li class="list-group-item cl-list-item-borderless">-->
+      <!--<a routerLink="./">Repeater</a>-->
+    <!--</li>-->
+  </ul>
+</div>
+<nav class="navbar fixed-bottom bg-primary navbar-dark justify-content-end p-0">
+  <div class="container-fuild">
+    <a routerLink="/profile/{{userId}}" class="navbar-link navbar-text cl-icon-padding ml-auto">
+      <i class="fas fa-user fontawsome_icon"></i>
+    </a>
+  </div>
+</nav>

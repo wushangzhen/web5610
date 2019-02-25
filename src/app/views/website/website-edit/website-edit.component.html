@@ -1,0 +1,69 @@
+<form (ngSubmit)="editWebsite()" #z="ngForm">
+<div class="container-fluid m-0 p-0">
+  <div class="row p-0">
+    <div class="col-4 p-0">
+      <nav class="navbar navbar-fixed-top bg-primary justify-content-start mb-3 p-0">
+        <a routerLink="/usr/{{userId}}/website" class="nav-item nav-link cl-text-white">
+          <i class="fas fa-chevron-left fontawsome_icon"></i>
+        </a>
+        <a class="cl-text-white navbar-brand cl-text-bold" routerLink="/usr/{{userId}}/website">
+          Websites
+        </a>
+        <a routerLink="/usr/{{userId}}/website/new" class="navbar-link navbar-text ml-auto cl-text-white cl-icon-padding">
+          <span class="navblack fas fa-plus"></span>
+        </a>
+      </nav>
+    </div>
+    <div class="col-8 p-0">
+      <nav class="navbar navbar-fixed-top bg-primary p-0">
+        <a class="cl-text-white navbar-brand cl-text-bold" routerLink="./">
+          Edit Websites
+        </a>
+        <a (click)="editWebsite()" class="navbar-link navbar-text pull-right cl-text-white cl-icon-padding">
+          <span class="fas fa-check fontawsome_icon"></span>
+        </a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="contain-fluid">
+  <div class="row">
+    <div class="col-4">
+      <div class="container">
+        <ul class="list-group cl-list-group-borderless">
+          <li class="list-group-item cl-list-item-borderless" *ngFor="let website of websites">
+            <a routerLink="/usr/{{userId}}/website/{{website._id}}"><span class="fas fa-cog fontawsome_icon float-right"></span></a>
+            <a routerLink="/usr/{{userId}}/website/{{website._id}}/page">{{website.description}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-8 p-0">
+      <form>
+        <div class="form-group">
+          <label for="websiteName">Website Name</label>
+          <input type="text" class="form-control" id="websiteName" name="websiteDescription" placeholder="Blogger"
+                 ngModel required #websiteName="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="websiteDescription">Website Description</label>
+          <textarea id="websiteDescription" class="form-control" rows="5" name = "websiteDescription"
+                    placeholder="Blog is a blog-publishing service."
+                    ngModel required #description="ngModel"></textarea>
+        </div>
+        <a class="btn btn-primary  btn-block" routerLink="/usr/{{userId}}/website">Cancel</a>
+        <button class="btn btn-danger  btn-block" (click)="deleteWebsite()">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar fixed-bottom bg-primary navbar-dark justify-content-end p-0">
+  <div class="container-fuild">
+    <a routerLink="/profile/{{userId}}" class="navbar-link navbar-text float-right">
+      <i class="fas fa-user fontawsome_icon"></i>
+    </a>
+  </div>
+</nav>
+</form>

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-default navbar-fixed-top bg-light p-0">
+  <div class="navbar-text pull-left p-0">
+    <a routerLink="/usr/{{userId}}/website/{{webId}}/page" class="cl-text-black cl-icon-padding">
+      <span class="fas fa-chevron-left fontawsome_icon">
+      </span>
+    </a>
+    <a class="navbar-brand cl-text-black cl-text-bold" routerLink="./">
+      Widgets
+    </a>
+  </div>
+  <div class="navbar-text pull-right">
+    <a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/new" class="cl-icon-padding cl-text-black">
+      <span class="fas fa-plus fontawsome_icon">
+      </span>
+    </a>
+  </div>
+</nav>
+
+<div class="container cl-container-padding justify-content-end">
+  <div *ngFor="let widget of widgets">
+    <div [ngSwitch]="widget.widgetType">
+      <div *ngSwitchCase="'HEADER'" [ngSwitch]="widget.size">
+        <span routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}" class="fas fa-cog fontawsome_icon float-right"></span>
+        <div *ngSwitchCase="1">
+          <h1>{{widget.text}}</h1>
+        </div>
+        <div *ngSwitchCase="3">
+          <h3>{{widget.text}}</h3>
+        </div>
+      </div>
+      <div *ngSwitchCase="'YOUTUBE'">
+        <div class="embed-responsive embed-responsive-16by9">
+          <a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}" class="float-right" style="position: absolute; top:0px; right:0px; z-index: 99;">
+            <i class="fas fa-cog fontawsome_icon" style="background-color: white"></i>
+          </a>
+          <iframe width="640" height="360" [src]="sanitizer.bypassSecurityTrustResourceUrl(widget.url)" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div *ngSwitchCase="'IMAGE'">
+        <span routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}" class="fas fa-cog fontawsome_icon float-right"></span>
+        <img class="img-responsive img-rounded cl-widget-images btn-primary"
+             src="{{widget.url}}">
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar fixed-bottom bg-primary navbar-dark justify-content-end p-0">
+  <a routerLink="./" class="float-left p-2 cl-text-black">
+    <i class="fa fa-play"></i>
+  </a>
+  <a routerLink="./" class="float-left p-2 cl-text-black">
+    <i class="fa fa-eye"></i>
+  </a>
+  <!--<div class="container-fuild p-0">-->
+    <a routerLink="/profile/{{userId}}" class="navbar-link navbar-text ml-auto">
+      <i class="fas fa-user fontawsome_icon"></i>
+    </a>
+  <!--</div>-->
+</nav>

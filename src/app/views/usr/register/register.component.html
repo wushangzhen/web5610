@@ -1,3 +1,22 @@
-<p>
-  register works!
-</p>
+<form (ngSubmit) = "register()" #f="ngForm">
+  <div class="container-fluid">
+    <h1>Register</h1>
+    <input type="text"
+           name="username"
+           class="form-control"
+           placeholder="username"
+           ngModel required #username="ngModel"/>
+    <input type="password"
+           name="password"
+           class="form-control"
+           placeholder="password"
+           ngModel required #password="ngModel"/>
+    <input type="password"
+           name="verifyPassword"
+           class="form-control"
+           placeholder="verify password"/>
+    <button class="btn btn-primary btn-block" type="submit" [disabled]="!f.valid">Login</button>
+    <a class="btn btn-danger btn-block"
+       routerLink="/login">Cancel</a>
+  </div>
+</form>

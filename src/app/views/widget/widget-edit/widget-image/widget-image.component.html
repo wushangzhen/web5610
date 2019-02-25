@@ -1,0 +1,51 @@
+<form #z="ngForm">
+<nav class="navbar navbar-default navbar-fixed-top bg-light p-0">
+  <div class="navbar-text pull-left p-0">
+    <a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget" class="cl-text-black cl-icon-padding">
+      <span class="fas fa-chevron-left fontawsome_icon">
+      </span>
+    </a>
+    <a class="navbar-brand cl-text-black cl-text-bold" routerLink="./">
+      Widgets Edit
+    </a>
+  </div>
+  <div class="navbar-text pull-right">
+    <a (click)="editImage()" class="cl-icon-padding cl-text-black">
+      <span class="fas fa-check fontawsome_icon">
+      </span>
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="form-group">
+      <label for="imageName">Name</label>
+      <input type="text" class="form-control" id="imageName" placeholder="Name" name="imageName" ngModel required #imageName="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="imageText">Text</label>
+      <input type="text" class="form-control" id="imageText" name="imageText" placeholder="Text" ngModel required #imageText="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="imageURL">URL</label>
+      <input [ngModel]="widget.url" type="text" class="form-control" id="imageURL" placeholder="URL" name="imageURL" ngModel required #imageURL="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="imageWidth">Width</label>
+      <input type="text" class="form-control" id="imageWidth" placeholder="100%" name="imageWidth" ngModel required #imageWidth="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputFile">Upload</label>
+      <input type="file" class="form-control" id="exampleInputFile">
+    </div>
+  <a class="btn btn-primary btn-block" routerLink="./">Upload Image</a>
+  <a class="btn btn-danger  btn-block" (click)="deleteWidget()">Delete</a>
+</div>
+
+<nav class="navbar fixed-bottom bg-primary navbar-dark justify-content-end p-0">
+  <div class="container-fuild">
+    <a routerLink="/profile/{{userId}}" class="navbar-link navbar-text cl-icon-padding ml-auto">
+      <i class="fas fa-user fontawsome_icon"></i>
+    </a>
+  </div>
+</nav>

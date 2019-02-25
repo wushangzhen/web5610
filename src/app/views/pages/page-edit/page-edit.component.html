@@ -1,0 +1,39 @@
+<form (ngSubmit)="editPage()" #z="ngForm">
+<nav class="navbar navbar-default navbar-fixed-top bg-light p-0">
+  <div class="navbar-text pull-left p-0">
+    <a routerLink="/usr/{{userId}}/website/{{webId}}/page" class="cl-text-black cl-icon-padding">
+          <span class="fas fa-chevron-left fontawsome_icon">
+          </span>
+    </a>
+    <a class="navbar-brand cl-text-black cl-text-bold" routerLink="./">
+      Edit Page
+    </a>
+  </div>
+  <div class="navbar-text ml-auto">
+    <a (click)="editPage()" class="cl-icon-padding cl-text-black">
+          <span class="fas fa-check fontawsome_icon">
+          </span>
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="form-group">
+      <label for="pageName">Name</label>
+      <input type="text" class="form-control" id="pageName" name="pageName" placeholder="Page Name" ngModel required #pageName="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="pageTitle">Title</label>
+      <input type="text" class="form-control" id="pageTitle" placeholder="Page Title"  name="pageTitle" ngModel required #pageTitle="ngModel">
+    </div>
+  <a class="btn btn-danger btn-block" (click)="deletePage()">Delete</a>
+</div>
+
+  <nav class="navbar fixed-bottom bg-primary navbar-dark justify-content-end p-0">
+    <div class="container-fuild p-0">
+      <a routerLink="/profile/{{userId}}" class="navbar-link navbar-text ml-auto">
+        <i class="fas fa-user fontawsome_icon"></i>
+      </a>
+    </div>
+  </nav>
+</form>
