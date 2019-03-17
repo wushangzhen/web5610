@@ -19,7 +19,7 @@
         <a class="cl-text-white navbar-brand cl-text-bold" routerLink="./">
           Edit Websites
         </a>
-        <a (click)="editWebsite()" class="navbar-link navbar-text pull-right cl-text-white cl-icon-padding">
+        <a (click)="editWebsite()" type="summit" class="navbar-link navbar-text pull-right cl-text-white cl-icon-padding">
           <span class="fas fa-check fontawsome_icon"></span>
         </a>
       </nav>
@@ -40,21 +40,21 @@
       </div>
     </div>
     <div class="col-8 p-0">
-      <form>
+      <!--<form>-->
         <div class="form-group">
           <label for="websiteName">Website Name</label>
-          <input type="text" class="form-control" id="websiteName" name="websiteDescription" placeholder="Blogger"
+          <input type="text" class="form-control" id="websiteName" name="websiteName" placeholder="Blogger"
                  ngModel required #websiteName="ngModel">
         </div>
         <div class="form-group">
           <label for="websiteDescription">Website Description</label>
           <textarea id="websiteDescription" class="form-control" rows="5" name = "websiteDescription"
                     placeholder="Blog is a blog-publishing service."
-                    ngModel required #description="ngModel"></textarea>
+                    ngModel required #websiteDescription="ngModel"></textarea>
         </div>
         <a class="btn btn-primary  btn-block" routerLink="/usr/{{userId}}/website">Cancel</a>
         <button class="btn btn-danger  btn-block" (click)="deleteWebsite()">Delete</button>
-      </form>
+      <!--</form>-->
     </div>
   </div>
 </div>

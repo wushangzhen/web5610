@@ -4,6 +4,7 @@ import {WidgetService} from '../../../../services/widget.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
 import {NgForm} from '@angular/forms';
+import {SharedService} from '../../../../services/shared.service';
 
 @Component({
   selector: 'app-widget-header',
@@ -20,17 +21,25 @@ export class WidgetHeaderComponent implements OnInit {
   widget: Widget;
     @ViewChild('z') myEditWidgetForm: NgForm;
   constructor(private widgetService: WidgetService, private activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer,
-              private router: Router) { }
+              private router: Router, private sharedService: SharedService) { }
+
   deleteWidget() {
-    this.widgetService.deleteWidget(this.widgetId);
+    this.widgetService.deleteWidget(this.widgetId).subscribe((data: any) => {
+    });
+      this.widgetService.findByPageId(this.pageId).subscribe((data1: any) => {
+          this.sharedService.widgets = data1;
+      }); // TODO test
       this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/']);
   }
     editHeader() {
-        console.log(this.myEditWidgetForm.value.headingText)
         this.widget.name = this.myEditWidgetForm.value.headingName;
         this.widget.text = this.myEditWidgetForm.value.headingText;
         this.widget.size = this.myEditWidgetForm.value.headingSize;
-        this.widgetService.updateWidget(this.widgetId, this.widget);
+        this.widgetService.updateWidget(this.widgetId, this.widget).subscribe((data: any) => {
+        });
+        this.widgetService.findByPageId(this.pageId).subscribe((data: any) => {
+            this.sharedService.widgets = data;
+        });
         this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/']);
     }
 
@@ -41,8 +50,8 @@ export class WidgetHeaderComponent implements OnInit {
           this.webId = params['wid'];
           this.pageId = params['pid'];
           this.widgetId = params['wgid'];
-          this.widgets = this.widgetService.widgets;
-          this.widget = this.widgetService.findByWidgetId(this.widgetId);
+          this.widgets = this.sharedService.widgets;
+          this.widget = this.sharedService.widget;
         }
     );
   }

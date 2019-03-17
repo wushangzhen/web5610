@@ -8,12 +8,12 @@ export class User {
   lastName: String;
   email: String;
 
-  constructor(_id, username, password) {
-    this._id = _id;
+  constructor(username, password) {
+    // this._id = _id;
     this.username = username;
     this.password = password;
-    this.firstName = username;
-    this.lastName = username;
-    this.email = username + '@gmail.com';
+    // this.firstName = username;
+    // this.lastName = username;
+    // this.email = username + '@gmail.com';
   }
 }

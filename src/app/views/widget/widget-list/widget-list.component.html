@@ -16,7 +16,7 @@
   </div>
 </nav>
 
-<div class="container cl-container-padding justify-content-end">
+<div class="container cl-container-padding justify-content-end" appSortable (newIndexes)="reorderWidgets($event)">
   <div *ngFor="let widget of widgets">
     <div [ngSwitch]="widget.widgetType">
       <div *ngSwitchCase="'HEADER'" [ngSwitch]="widget.size">

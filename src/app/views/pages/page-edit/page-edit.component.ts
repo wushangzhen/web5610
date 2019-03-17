@@ -3,6 +3,7 @@ import {Page} from '../../../models/page.model.client';
 import {NgForm} from '@angular/forms';
 import {PageService} from '../../../services/page.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
+import {SharedService} from '../../../services/shared.service';
 
 @Component({
   selector: 'app-page-edit',
@@ -17,14 +18,25 @@ export class PageEditComponent implements OnInit {
   pageId: String;
   page: Page;
   @ViewChild('z') myPageEditForm: NgForm;
-  constructor(private pageService: PageService, private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(private pageService: PageService, private activatedRoute: ActivatedRoute, private router: Router,
+              private sharedService: SharedService) {}
   editPage() {
-    this.page = new Page('1', this.myPageEditForm.value.pageName, this.webId, this.myPageEditForm.value.pageTitle);
-    this.pageService.updatePage(this.pageId, this.page);
+    if (this.myPageEditForm.value.pageName && this.myPageEditForm.value.pageTitle) {
+      this.page = new Page(this.myPageEditForm.value.pageName, this.webId, this.myPageEditForm.value.pageTitle);
+      this.pageService.updatePage(this.pageId, this.page).subscribe((data: any) => {
+      });
+      this.pageService.findPageByWebsiteId(this.webId).subscribe((data: any) => {
+        this.sharedService.pages = data;
+      });
+    }
     this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page']);
   }
   deletePage() {
-    this.pageService.deleteWebsite(this.pageId);
+    this.pageService.deleteWebsite(this.pageId).subscribe((data: any) => {
+    });
+    this.pageService.findPageByWebsiteId(this.webId).subscribe((data: any) => {
+      this.sharedService.pages = data;
+    });
     this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page']);
   }
 
@@ -34,7 +46,7 @@ export class PageEditComponent implements OnInit {
           this.userId = params['uid'];
           this.webId = params['wid'];
           this.pageId = params['pid'];
-          this.pages = this.pageService.findPageByWebsiteId(this.webId);
+          // this.pages = this.pageService.findPageByWebsiteId(this.webId);
         }
     );
   }

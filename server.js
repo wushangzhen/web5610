@@ -29,4 +29,16 @@ app.set('port', port);
 const server = http.createServer(app);
 server.listen( port , () => console.log('Running on port 3200'));
 
-//require('./assignment/app')(app);
+
+
+// app.get("/api/hello", function(req, res){
+//   console.log("Get hello api call!");
+//   res.send("Hello world!");});
+// app.get("/api/test", test);
+//
+// function test(req, res) {
+//   console.log("Hit test api....")
+//   res.status(400).send('Bad request...');
+// }
+// require('./helloworld')(app);
+require('./assignment/app')(app);

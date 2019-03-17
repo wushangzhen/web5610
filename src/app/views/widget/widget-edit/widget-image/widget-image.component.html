@@ -1,4 +1,4 @@
-<form #z="ngForm">
+<form #z="ngForm" >
 <nav class="navbar navbar-default navbar-fixed-top bg-light p-0">
   <div class="navbar-text pull-left p-0">
     <a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget" class="cl-text-black cl-icon-padding">
@@ -34,11 +34,20 @@
       <label for="imageWidth">Width</label>
       <input type="text" class="form-control" id="imageWidth" placeholder="100%" name="imageWidth" ngModel required #imageWidth="ngModel">
     </div>
-    <div class="form-group">
-      <label for="exampleInputFile">Upload</label>
-      <input type="file" class="form-control" id="exampleInputFile">
-    </div>
-  <a class="btn btn-primary btn-block" routerLink="./">Upload Image</a>
+    <form ngNoForm action="{{baseUrl}}api/upload" method="post" enctype="multipart/form-data">
+        <input  name="myFile"   type="file" class="form-control"/>
+        <input  name="widgetId" value="{{widgetId}}"   style="display: none"/>
+        <input  name="websiteId" value="{{webId}}"   style="display: none"/>
+        <input  name="pageId" value="{{pageId}}"   style="display: none"/>
+        <input  name="userId" value="{{userId}}"   style="display: none"/>
+        <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
+        <br/>
+    </form>
+    <!--<div class="form-group">-->
+      <!--<label for="exampleInputFile">Upload</label>-->
+      <!--<input type="file" class="form-control" id="exampleInputFile">-->
+    <!--</div>-->
+  <a class="btn btn-primary btn-block" routerLink="./">Choose From Flickr Not Support Now</a>
   <a class="btn btn-danger  btn-block" (click)="deleteWidget()">Delete</a>
 </div>
 

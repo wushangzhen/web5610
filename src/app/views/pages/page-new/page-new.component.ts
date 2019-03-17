@@ -3,6 +3,7 @@ import {Page} from '../../../models/page.model.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PageService} from '../../../services/page.service.client';
 import {NgForm} from '@angular/forms';
+import {SharedService} from '../../../services/shared.service';
 
 
 @Component({
@@ -17,11 +18,15 @@ export class PageNewComponent implements OnInit {
   pages: Page[] = [];
   page: Page;
   @ViewChild('z') myPageNewForm: NgForm;
-  constructor(private pageService: PageService, private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(private pageService: PageService, private activatedRoute: ActivatedRoute, private router: Router,
+              private sharedService: SharedService) {}
   createPage() {
-    this.page = new Page('1', this.myPageNewForm.value.pageName, this.webId, this.myPageNewForm.value.pageTitle);
-    console.log(this.myPageNewForm.value.pageName);
-    this.pageService.createPage(this.webId, this.page);
+    if (this.myPageNewForm.value.pageName && this.myPageNewForm.value.pageTitle) {
+      this.page = new Page(this.myPageNewForm.value.pageName, this.webId, this.myPageNewForm.value.pageTitle);
+      this.pageService.createPage(this.webId, this.page).subscribe((data: any) => {
+        this.sharedService.pages = data;
+      });
+    }
     this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page']);
   }
 
@@ -30,7 +35,6 @@ export class PageNewComponent implements OnInit {
         (params: any) => {
           this.userId = params['uid'];
           this.webId = params['wid'];
-          this.pages = this.pageService.findPageByWebsiteId(this.webId);
         }
     );
   }
