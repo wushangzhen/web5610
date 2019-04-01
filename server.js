@@ -30,8 +30,8 @@ app.set('port', port);
 const server = http.createServer(app);
 server.listen( port , () => console.log('Running on port 3200'));
 
-var connectionString = 'mongodb://127.0.0.1:27017/webdev';
-//var connectionString = 'mongodb://webappmaker:webappmaker@ds163181.mlab.com:63181/webappmaker';
+//var connectionString = 'mongodb://127.0.0.1:27017/webdev';
+var connectionString = 'mongodb://heroku_qp36wfd6:qlo0doahrrjie1en3720iffsce@ds049744.mlab.com:49744/heroku_qp36wfd6';
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 const client = mongoose.connect( connectionString, { useNewUrlParser: true });
