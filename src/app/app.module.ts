@@ -28,6 +28,12 @@ import { WidgetService } from './services/widget.service.client';
 import {routing} from './app-routing.module';
 import {SharedService} from './services/shared.service';
 import { SortableDirective } from './sortable.directive';
+import { FlickrImageSearchComponent } from './views/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
+import {FlickrService} from './services/flickr.service';
+import { WidgetHtmlComponent } from './views/widget/widget-edit/widget-html/widget-html.component';
+import {QuillEditorModule} from 'ngx-quill-editor';
+import { WidgetTextComponent } from './views/widget/widget-edit/widget-text/widget-text.component';
+// import { QuillModule } from 'ngx-quill';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +53,9 @@ import { SortableDirective } from './sortable.directive';
     WidgetImageComponent,
     WidgetYoutubeComponent,
     SortableDirective,
+    FlickrImageSearchComponent,
+    WidgetHtmlComponent,
+    WidgetTextComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,8 +63,10 @@ import { SortableDirective } from './sortable.directive';
     routing,
     FormsModule,
       HttpClientModule,
+    // QuillModule,
+    QuillEditorModule
   ],
-  providers: [UserService, WebsiteService, PageService, WidgetService, SharedService],
+  providers: [UserService, WebsiteService, PageService, WidgetService, SharedService, FlickrService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

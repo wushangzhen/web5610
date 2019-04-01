@@ -12,6 +12,8 @@ import {PageEditComponent} from './views/pages/page-edit/page-edit.component';
 import {WidgetListComponent} from './views/widget/widget-list/widget-list.component';
 import {WidgetChooserComponent} from './views/widget/widget-chooser/widget-chooser.component';
 import {WidgetEditComponent} from './views/widget/widget-edit/widget-edit.component';
+import {FlickrImageSearchComponent} from './views/widget/widget-edit/widget-image/flickr-image-search/flickr-image-search.component';
+
 // const routes: Routes = [];
 
   const routes: Routes = [ 
@@ -28,6 +30,7 @@ import {WidgetEditComponent} from './views/widget/widget-edit/widget-edit.compon
       { path: 'usr/:uid/website/:wid/page/:pid/widget', component: WidgetListComponent},
       { path: 'usr/:uid/website/:wid/page/:pid/widget/new', component: WidgetChooserComponent},
       { path: 'usr/:uid/website/:wid/page/:pid/widget/:wgid', component: WidgetEditComponent},
+      { path: 'usr/:uid/website/:wid/page/:pid/widget/:wgid/example/flickr', component: FlickrImageSearchComponent},
     ];
 
 @NgModule({

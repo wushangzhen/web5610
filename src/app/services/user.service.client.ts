@@ -33,9 +33,9 @@ export class UserService {
     // findUser
     // delete
 
-    updateUser(user: User) {
+    updateUser(user: any) {
         const req_url = this.baseUrl + 'api/user/' + user._id;
-        return this.http.put<User>(req_url, user);
+        return this.http.put(req_url, user);
         // return this.http.put(req_url, user).map((response: Response) => {
         //     return response.json();
         // });

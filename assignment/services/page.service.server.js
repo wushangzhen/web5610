@@ -5,86 +5,68 @@ module.exports=function (app) {
     app.put("/api/page/:pageId", updatePage);
     app.delete("/api/page/:pageId", deletePage);
 
-    pages = [
-        {_id: "321", name: "page321", websiteId: "321", title: 'page321'},
-        {_id: "323", name: "page323", websiteId: "321", title: 'page323'},
-        {_id: "432", name: "page432", websiteId: "234", title: 'page432'},
-        {_id: "234", name: "page234", websiteId: "345", title: 'page234'},
-        {_id: "333", name: "page333", websiteId: "124", title: 'page333'},
-        ];
+    var pageModel = require('../model/page/page.model.server');
     function createPage(req, res) {
         var websiteId = req.params.websiteId;
         var page = req.body;
-        for (var i = 0; i < pages.length; i++) {
-            if (pages[i].websiteId === page.websiteId && pages[i].name === page.name) {
-                res.status(404).send("This page has already existed.");
-                return;
-            }
-        }
-        page._id = Math.random().toString();
-        page.websiteId = websiteId;
-        pages.push(page);
-        res.json(findAllPagesForWebsite2(websiteId));
-    }
-
-    function findAllPagesForWebsite2(websiteId) {
-        var resultSet = [];
-        for (var x = 0; x < pages.length; x++) {
-            if (pages[x].websiteId === websiteId) {
-                resultSet.push(pages[x]);
-            }
-        }
-        return resultSet;
+        pageModel.createPage(websiteId,page)
+            .then(
+                function (page) {
+                    res.json(page);
+                }
+                // function (error) {
+                //     res.statusCode(400).send(error);
+                // }
+            );
     }
 
     function findAllPagesForWebsite(req, res) {
         var websiteId = req.params.websiteId;
-        var resultSet = [];
-        for (var x = 0; x < pages.length; x++) {
-            if (pages[x].websiteId === websiteId) {
-                resultSet.push(pages[x]);
+        pageModel.findAllPagesForWebsite(websiteId).then(
+            function (pages) {
+                res.json(pages);
+            },
+            function (error) {
+                res.statusCode(400).send(error);
             }
-        }
-        res.json(resultSet);
+        );
     }
 
     function findPageById(req, res) {
         var pageId = req.params.pageId;
-        for (var i = 0; i < pages.length; i++) {
-            if (pages[i]._id === pageId) {
-                return res.json(pages[i]);
+        pageModel.findPageById(pageId).then(
+            function (page) {
+                res.json(page);
+            },
+            function (error) {
+                res.statusCode(400).send(error);
             }
-        }
-        res.status(404).send("Cannot find page.");
+        );
     }
 
     function updatePage(req, res) {
         let pageId = req.params.pageId;
         var updatedPage = req.body;
-        console.log(pageId);
-        for (var i = 0; i < pages.length; i++) {
-            console.log(pages[i]._id);
-            if (pages[i]._id === pageId) {
-                pages[i].name = updatedPage.name;
-                pages[i].title = updatedPage.title;
-                res.json(pages[i]);
-                console.log(pages[i].name);
-                return;
+        pageModel.updatePage(pageId, updatedPage).then(
+            function (page) {
+                res.json(page);
+            },
+            function (err) {
+                res.statusCode(400).send(err);
             }
-        }
-        res.status(404).send("Cannot find page");
+        )
     }
 
     function deletePage(req, res) {
         var pageId = req.params.pageId;
-        for (var x = 0; x < pages.length; x++) {
-            if (pages[x]._id === pageId) {
-                res.json(pages[x]);
-                pages.splice(x, 1);
-                return;
+        pageModel.deletePage(pageId).then(
+            function (page) {
+                res.json(page);
+            },
+            function (error) {
+                res.statusCode(400).send(error);
             }
-        }
-        res.status(404).send("Cannot find page");
+        );
     }
 }
 

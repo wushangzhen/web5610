@@ -32,6 +32,7 @@ export class WidgetListComponent implements OnInit {
           // this.widgets = this.widgetService.widgets;
         }
     );
+    this.widgets = [{}];
     this.widgetService.findByPageId(this.pageId).subscribe((data: any) => {
         this.sharedService.widgets = data;
         this.widgets = data;

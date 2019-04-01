@@ -27,12 +27,12 @@ export class WidgetImageComponent implements OnInit {
               private router: Router, private sharedService: SharedService) { }
   deleteWidget() {
       this.widgetService.deleteWidget(this.widgetId).subscribe((data: any) => {
-          this.sharedService.widgets = data;
-          this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/']);
-          // this.widgetService.findByPageId(this.pageId).subscribe((data1: any) => {
-          //     this.sharedService.widgets = data1;
-          //     this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/']);
-          // });
+          // this.sharedService.widgets = data;
+          // this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/']);
+          this.widgetService.findByPageId(this.pageId).subscribe((data1: any) => {
+              this.sharedService.widgets = data1;
+              this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/']);
+          });
       });
       // this.widgetService.findByPageId(this.pageId).subscribe((data1: any) => {
       //     this.sharedService.widgets = data1;

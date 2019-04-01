@@ -1,0 +1,74 @@
+<form #z="ngForm" >
+  <nav class="navbar navbar-default navbar-fixed-top bg-light p-0">
+    <div class="navbar-text pull-left p-0">
+      <a routerLink="/usr/{{userId}}/website/{{websiteId}}/page/{{pageId}}/widget" class="cl-text-black cl-icon-padding">
+      <span class="fas fa-chevron-left fontawsome_icon">
+      </span>
+      </a>
+      <a class="navbar-brand cl-text-black cl-text-bold" routerLink="./">
+        Widgets Edit
+      </a>
+    </div>
+    <div class="navbar-text pull-right">
+      <a (click)="updateWidget()" class="cl-icon-padding cl-text-black">
+      <span class="fas fa-check fontawsome_icon">
+      </span>
+      </a>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div *ngIf="flag"
+         class="alert alert-danger">
+      {{error}}
+    </div>
+    <form novalidate name="model.myform">
+      <div class="form-group">
+        <label for="Name">Name</label>
+        <input [(ngModel)]="widget.name"
+               type="text"
+               class="form-control"
+               id="Name"
+               name="widname"
+               placeholder="Name"
+               required>
+        <span class="alert-class"
+              *ngIf="flag">{{alert}}</span>
+      </div>
+      <!--<div ng-model="model.widget.text"-->
+      <!--text-angular-->
+      <!--ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],-->
+      <!--['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],-->
+      <!--['indent','outdent'],['html']]">-->
+      <!--</div>-->
+
+      <!-- use with ngModel -->
+      <quill-editor [(ngModel)]="widget.text" name="text"></quill-editor>
+        <!--<quill-editor [(ngModel)]="editorContent"-->
+                      <!--[options]="editorOptions"-->
+                      <!--(blur)="onEditorBlured($event)"-->
+                      <!--(focus)="onEditorFocused($event)"-->
+                      <!--(ready)="onEditorCreated($event)"-->
+                      <!--(change)="onContentChanged($event)"></quill-editor>-->
+      <!--[options]="editorOptions"-->
+      <!--(blur)="onEditorBlured($event)"-->
+      <!--(focus)="onEditorFocused($event)"-->
+      <!--(ready)="onEditorCreated($event)"-->
+      <!--(change)="onContentChanged($event)"-->
+    </form>
+    <p></p>
+
+    <a class="btn btn-danger btn-block"
+       (click)="deleteWidget()">Delete</a>
+
+  </div>
+
+  <nav class="navbar fixed-bottom bg-primary navbar-dark justify-content-end p-0">
+    <div class="container-fuild">
+      <a routerLink="/profile/{{userId}}" class="navbar-link navbar-text cl-icon-padding ml-auto">
+        <i class="fas fa-user fontawsome_icon"></i>
+      </a>
+    </div>
+  </nav>
+</form>

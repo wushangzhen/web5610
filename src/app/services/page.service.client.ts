@@ -20,6 +20,8 @@ export class PageService {
     }
 
     findPageById(pageId: String) {
+        const req_url = this.baseUrl + 'api/page/' + pageId;
+        return this.http.get(req_url);
         // return this.pages.find(function (page) {
         //     return page._id === pageId;
         // });

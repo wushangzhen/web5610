@@ -16,14 +16,30 @@ export class WidgetChooserComponent implements OnInit {
   webId: String;
   pageId: String;
   // widgets: Widget[] = [];
-  widget: Widget;
+  widget: any = {
+      pageId: '',
+      type: 'HEADING',
+      name: '',
+      text: '',
+      placeholder: '',
+      description: '',
+      url: '',
+      width: '',
+      height: '',
+      rows: 1,
+      size: 1,
+      class: '',
+      icon: '',
+      deletable:true,
+      formatted: true,
+      position: 0,
+  };
   wgid: String;
   constructor(private widgetService: WidgetService, private activatedRoute: ActivatedRoute,
               public sanitizer: DomSanitizer, private router: Router, private sharedService: SharedService) { }
 
   createNewHeader() {
-      this.widget = new Widget('HEADER', this.pageId, '1',
-          'London terror attack: Police fired unprecedented number of rounds');
+      this.widget.type = 'HEADING';
       this.widgetService.createWidget(this.pageId, this.widget).subscribe((data: any) => {
           this.widget = data;
           this.sharedService.widget = data;
@@ -32,14 +48,33 @@ export class WidgetChooserComponent implements OnInit {
           });
           this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/' + this.widget._id]);
       });
-      // this.widgetService.findByPageId(this.pageId).subscribe((data: any) => {
-      //     this.sharedService.widgets = data;
-      // });
-      // console.log(this.widget._id);
-      // this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/' + this.widget._id]);
   }
+    createNewHTML() {
+        this.widget.type = 'HTML';
+        this.widgetService.createWidget(this.pageId, this.widget).subscribe((data: any) => {
+            this.widget = data;
+            this.sharedService.widget = data;
+            this.widgetService.findByPageId(this.pageId).subscribe((data1: any) => {
+                this.sharedService.widgets = data1;
+            });
+            console.log(this.widget.type);
+            this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/' + this.widget._id]);
+        });
+    }
+    createNewTEXT() {
+        this.widget.type = 'TEXT';
+        this.widgetService.createWidget(this.pageId, this.widget).subscribe((data: any) => {
+            this.widget = data;
+            this.sharedService.widget = data;
+            this.widgetService.findByPageId(this.pageId).subscribe((data1: any) => {
+                this.sharedService.widgets = data1;
+            });
+            this.router.navigate(['/usr/' + this.userId + '/website/' + this.webId + '/page/' + this.pageId + '/widget/' + this.widget._id]);
+        });
+    }
     createNewYoutube() {
-        this.widget = new Widget('YOUTUBE', this.pageId, '2', 'text', '100%', 'https://www.youtube.com/embed/APexI9Zb6iE/' );
+        this.widget.type = 'YOUTUBE';
+        // this.widget = new Widget('YOUTUBE', this.pageId, '2', 'text', '100%', 'https://www.youtube.com/embed/APexI9Zb6iE/' );
         this.widgetService.createWidget(this.pageId, this.widget).subscribe((data: any) => {
             this.widget = data;
             this.sharedService.widget = data;
@@ -50,8 +85,9 @@ export class WidgetChooserComponent implements OnInit {
         });
     }
     createNewImage() {
-        this.widget = new Widget( 'IMAGE', this.pageId, '2', 'text', '100%',
-            'http://i2.cdn.cnn.com/cnnnext/dam/assets/170604130220-41-london-bridge-incident-0604-gallery-exlarge-169.jpg');
+        this.widget.type = 'IMAGE';
+        // this.widget = new Widget( 'IMAGE', this.pageId, '2', 'text', '100%',
+        //     'http://i2.cdn.cnn.com/cnnnext/dam/assets/170604130220-41-london-bridge-incident-0604-gallery-exlarge-169.jpg');
         this.widgetService.createWidget(this.pageId, this.widget).subscribe((data: any) => {
             this.widget = data;
             this.sharedService.widget = data;
@@ -67,9 +103,9 @@ export class WidgetChooserComponent implements OnInit {
           this.userId = params['uid'];
           this.webId = params['wid'];
           this.pageId = params['pid'];
+          this.widget.pageId = this.pageId;
           // this.widgets = this.widgetService.widgets;
         }
     );
   }
-
 }

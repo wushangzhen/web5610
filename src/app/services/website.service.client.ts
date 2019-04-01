@@ -32,14 +32,12 @@ export class WebsiteService {
     }
 
     findWebsitesById(websiteId: String) {
-        // return this.websites.find(function (website) {
-        //     return website._id === websiteId;
-        // });
+        const req_url = this.baseUrl + 'api/website/' + websiteId;
+        return this.http.get(req_url);
     }
 
-    updateWebsite(userId: String, website: Website) {
+    updateWebsite(userId: String, website: any) {
         const req_url = this.baseUrl + 'api/user/' + userId + '/website/' + website._id;
-        console.log(req_url);
         return this.http.put(req_url, website);
     }
 

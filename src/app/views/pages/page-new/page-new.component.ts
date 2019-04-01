@@ -16,14 +16,25 @@ export class PageNewComponent implements OnInit {
   userId: String
   webId: String
   pages: Page[] = [];
-  page: Page;
+  page: any = {
+    name: '',
+    description: '',
+    websiteId: '',
+    title: '',
+    widgets: [],
+  };
   @ViewChild('z') myPageNewForm: NgForm;
   constructor(private pageService: PageService, private activatedRoute: ActivatedRoute, private router: Router,
               private sharedService: SharedService) {}
   createPage() {
     if (this.myPageNewForm.value.pageName && this.myPageNewForm.value.pageTitle) {
-      this.page = new Page(this.myPageNewForm.value.pageName, this.webId, this.myPageNewForm.value.pageTitle);
+      this.page.name = this.myPageNewForm.value.pageName;
+      this.page.title = this.myPageNewForm.value.pageTitle;
+      this.page.websiteId = this.webId;
       this.pageService.createPage(this.webId, this.page).subscribe((data: any) => {
+        this.sharedService.page = data;
+      });
+      this.pageService.findPageByWebsiteId(this.webId).subscribe((data: any) => {
         this.sharedService.pages = data;
       });
     }
@@ -37,5 +48,8 @@ export class PageNewComponent implements OnInit {
           this.webId = params['wid'];
         }
     );
+    this.pageService.findPageByWebsiteId(this.webId).subscribe((data:any)=> {
+      this.sharedService.pages = data;
+    });
   }
 }

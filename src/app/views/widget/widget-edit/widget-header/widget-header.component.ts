@@ -18,7 +18,25 @@ export class WidgetHeaderComponent implements OnInit {
   pageId: String;
   widgetId: String;
   widgets: Widget[] = [];
-  widget: Widget;
+  // widget: Widget;
+    widget: any = {
+        pageId: '',
+        type: 'HEADING',
+        name: '',
+        text: '',
+        placeholder: '',
+        description: '',
+        url: '',
+        width: '',
+        height: '',
+        rows: 1,
+        size: 1,
+        class: '',
+        icon: '',
+        deletable:true,
+        formatted: true,
+        position: 0,
+    };
     @ViewChild('z') myEditWidgetForm: NgForm;
   constructor(private widgetService: WidgetService, private activatedRoute: ActivatedRoute, public sanitizer: DomSanitizer,
               private router: Router, private sharedService: SharedService) { }
@@ -51,7 +69,10 @@ export class WidgetHeaderComponent implements OnInit {
           this.pageId = params['pid'];
           this.widgetId = params['wgid'];
           this.widgets = this.sharedService.widgets;
-          this.widget = this.sharedService.widget;
+          this.widgetService.findByWidgetId(this.widgetId).subscribe((data:any)=> {
+              this.widget = data;
+          });
+          // this.widget = this.sharedService.widget;
         }
     );
   }

@@ -18,28 +18,53 @@
 
 <div class="container cl-container-padding justify-content-end" appSortable (newIndexes)="reorderWidgets($event)">
   <div *ngFor="let widget of widgets">
-    <div [ngSwitch]="widget.widgetType">
-      <div *ngSwitchCase="'HEADER'" [ngSwitch]="widget.size">
+    <div [ngSwitch]="widget.type">
+
+      <div *ngSwitchCase="'HEADING'" [ngSwitch]="widget.size">
         <span routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}" class="fas fa-cog fontawsome_icon float-right"></span>
-        <div *ngSwitchCase="1">
-          <h1>{{widget.text}}</h1>
-        </div>
-        <div *ngSwitchCase="3">
-          <h3>{{widget.text}}</h3>
-        </div>
+        <h1 *ngSwitchCase="1">{{widget.text}}</h1>
+        <h2 *ngSwitchCase="2">{{widget.text}}</h2>
+        <h3 *ngSwitchCase="3">{{widget.text}}</h3>
+        <h4 *ngSwitchCase="4">{{widget.text}}</h4>
+        <h5 *ngSwitchCase="5">{{widget.text}}</h5>
+        <h6 *ngSwitchCase="6">{{widget.text}}</h6>
       </div>
-      <div *ngSwitchCase="'YOUTUBE'">
+
+      <div *ngSwitchCase="'YOUTUBE'" class="youtube-widget">
         <div class="embed-responsive embed-responsive-16by9">
           <a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}" class="float-right" style="position: absolute; top:0px; right:0px; z-index: 99;">
             <i class="fas fa-cog fontawsome_icon" style="background-color: white"></i>
           </a>
-          <iframe width="640" height="360" [src]="sanitizer.bypassSecurityTrustResourceUrl(widget.url)" allowfullscreen></iframe>
+          <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(widget.url)" allowfullscreen></iframe>
         </div>
       </div>
+
       <div *ngSwitchCase="'IMAGE'">
         <span routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}" class="fas fa-cog fontawsome_icon float-right"></span>
         <img class="img-responsive img-rounded cl-widget-images btn-primary"
              src="{{widget.url}}">
+      </div>
+
+      <div *ngSwitchCase="'HTML'">
+        <a routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}">
+          <span class="fa fa-cog fontawsome_icon float-right"></span>
+        </a>
+        <div [innerHtml] = "widget.text"></div>
+      </div>
+
+      <div *ngSwitchCase="'TEXT'">
+        <span routerLink="/usr/{{userId}}/website/{{webId}}/page/{{pageId}}/widget/{{widget._id}}" class="fas fa-cog fontawsome_icon float-right"></span>
+        <div *ngIf="widget.formatted">
+          <quill-editor [(ngModel)]="widget.text" name="text"></quill-editor>
+        </div>
+
+        <input *ngIf="!widget.formatted && (!widget.rows || widget.rows===1)"
+               placeholder="{{widget.placeholder}}" class="form-control"/>
+
+        <textarea *ngIf="!widget.formatted && (widget.rows > 1)"
+                  rows="{{widget.rows}}" placeholder="{{widget.placeholder}}"
+                  class="form-control">{{widget.text}}
+        </textarea>
       </div>
     </div>
   </div>

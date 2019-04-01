@@ -4,6 +4,7 @@ import {WebsiteService} from '../../../services/website.service.client';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {SharedService} from '../../../services/shared.service';
+import {Page} from '../../../models/page.model.client';
 
 @Component({
   selector: 'app-website-edit',
@@ -15,17 +16,29 @@ export class WebsiteEditComponent implements OnInit {
   userId: String
   webId: String
     websites: Website[] = [];
-  website: Website;
+  // website: Website;
+    website: any = {_id: '',
+        name: '',
+        description: '',
+        // pages: Page=[],
+        developerId: ''};
     @ViewChild('z') myWebsiteEditForm: NgForm;
   constructor(private websiteService: WebsiteService, private activatedRoute: ActivatedRoute, private router: Router,
               private sharedService: SharedService) { }
   editWebsite() {
       if (this.myWebsiteEditForm.value.websiteName && this.myWebsiteEditForm.value.websiteDescription) {
-          this.website =
-              new Website(this.myWebsiteEditForm.value.websiteName, this.userId, this.myWebsiteEditForm.value.websiteDescription);
-          this.website._id = this.webId;
+          console.log(this.myWebsiteEditForm.value.websiteName);
+          console.log(this.website.name);
+          this.website.name = this.myWebsiteEditForm.value.websiteName;
+          this.website.description = this.myWebsiteEditForm.value.websiteDescription;
+          console.log(this.website.name);
           this.websiteService.updateWebsite(this.userId, this.website).subscribe((data: any) => {
-              this.sharedService.websites = data;
+              this.website = data;
+              this.websites = [];
+              this.websiteService.findWebsitesByUser2(this.userId).subscribe((data1: any) => {
+                  this.sharedService.websites = data1;
+                  this.websites = data1;
+              });
           });
       }
       this.router.navigate(['/usr/' + this.userId + '/website']);
@@ -43,6 +56,11 @@ export class WebsiteEditComponent implements OnInit {
         (params: any) => {
           this.userId = params['uid'];
           this.webId = params['wid'];
+          this.website._id = params['wid'];
+          this.website.developerId = this.userId;
+          this.websiteService.findWebsitesById(this.webId).subscribe((data:any)=>{
+              this.website = data;
+          });
           // this.websites = this.websiteService.findWebsitesByUser2(params['uid']);
         }
     );

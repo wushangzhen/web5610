@@ -20,11 +20,11 @@
 <div class="container">
     <div class="form-group">
       <label for="pageName">Name</label>
-      <input type="text" class="form-control" id="pageName" name="pageName" placeholder="Page Name" ngModel required #pageName="ngModel">
+      <input [(ngModel)]="page.name" type="text" class="form-control" id="pageName" name="pageName" placeholder="Page Name" ngModel required #pageName="ngModel">
     </div>
     <div class="form-group">
       <label for="pageTitle">Title</label>
-      <input type="text" class="form-control" id="pageTitle" placeholder="Page Title" name="pageTitle" ngModel required #pageTitle="ngModel">
+      <input [(ngModel)]="page.title" type="text" class="form-control" id="pageTitle" placeholder="Page Title" name="pageTitle" ngModel required #pageTitle="ngModel">
     </div>
   <a class="btn btn-danger btn-block" (click)="deletePage()">Delete</a>
 </div>

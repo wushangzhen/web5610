@@ -13,15 +13,23 @@ import {defer} from 'rxjs';
 })
 export class WidgetEditComponent implements OnInit {
   wgid: String;
-  widget: Widget = {
-        _id: '',
-        widgetType: '',
+    widget: any = {
         pageId: '',
-      size: '',
-      text: '',
-      url: '',
-      width: '',
-      name: '',
+        type: 'HEADING',
+        name: '',
+        text: '',
+        placeholder: '',
+        description: '',
+        url: '',
+        width: '',
+        height: '',
+        rows: 1,
+        size: 1,
+        class: '',
+        icon: '',
+        deletable:true,
+        formatted: true,
+        position: 0,
     };
   // problem should ask teacher
   widgets: Widget[] = [];
@@ -35,9 +43,9 @@ export class WidgetEditComponent implements OnInit {
             this.widgetService.findByWidgetId(this.wgid).subscribe((data: any) => {
                 this.sharedService.widget = data;
                 this.widget = data;
+                console.log("xxx" + this.widget.type);
             });
           }
       );
-      console.log(this.widget._id);
   }
 }

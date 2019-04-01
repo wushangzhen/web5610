@@ -14,23 +14,34 @@ export class RegisterComponent implements OnInit {
   @ViewChild('f') myRegisterForm: NgForm;
   username: String; // see usage as two-way data binding
   password: String; // see usage as two-way data binding
-  user: User;
+  user: any = {
+    username: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    websites: [],
+  };
   uid: String;
 
   constructor(private userService: UserService, private router: Router, private shareService: SharedService) {
     this.username = 'hello world!';
   }
   register() {
-    this.username = this.myRegisterForm.value.username;
-    this.password = this.myRegisterForm.value.password;
+    this.user.username = this.myRegisterForm.value.username;
+    this.user.password = this.myRegisterForm.value.password;
     alert(this.username);
-    this.user = new User(this.username, this.password);
+    // this.user = new User(this.username, this.password);
     // TODO the id type is not right
     // const user: User = this.userService.findUserByCredential(this.username, this.password);
+    // this.userService.findUserById(this.username).subscribe((data: any) => {
+    //   console.log(data);
+    // });
     this.userService.findUserByCredential(this.username, this.password)
-        .subscribe((user: User) => {
+        .subscribe((user: any) => {
           if (!user) {
-            this.userService.createUser(this.user).subscribe((data: User) => {
+            this.userService.createUser(this.user).subscribe((data: any) => {
               this.user = data;
               this.shareService.user = data;
               this.router.navigate(['profile/', this.user._id]);

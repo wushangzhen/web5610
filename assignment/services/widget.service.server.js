@@ -1,27 +1,28 @@
 module.exports= function(app){
-    widgets = [
-        { _id: "123", widgetType: "HEADER", name: ' ', pageId: "321", size: "1", text: "London terror attack: Police " +
-                "fired unprecedented number of rounds", url: "", width: "", height: 100, rows: 0, class: '', icon: '',
-            deletable: false, formatted: false, placeholder: ''},
-        { _id: "124", widgetType: "HEADER", name: ' ', pageId: "321", size: "3", text: "Counter terrorism officers " +
-                "patrol near the scene of the attack on London Bridge.", url: "", width: "", height: 100, rows: 0,
-            class: '', icon: '', deletable: false, formatted: false, placeholder: '' },
-        { _id: "125", widgetType: "IMAGE", pageId: "321", size: "", text: "", width: "100%",
-            url: 'http://i2.cdn.cnn.com/cnnnext/dam/assets/170604130220-41-london-bridge-incident-0604-gallery-exlarge-169.jpg',
-            width: "", height: 100, rows: 0, class: '', icon: '',
-            deletable: false, formatted: false, placeholder: '' },
-        { _id: "456", widgetType: "HTML", name: 'html name', pageId: "321", size: "", text: "<p>Lorem ipsum</p>",
-            url: "", width: "", height: 100, rows: 0, class: '', icon: '', deletable: false,
-            formatted: false, placeholder: ''},
-        { _id: "678", widgetType: "YOUTUBE", name: ' ', pageId: "321", size: "", text: "",
-            url: 'https://www.youtube.com/embed/APexI9Zb6iE/', width: "100%", height: 100, rows: 0, class: '', icon: '',
-            deletable: false, formatted: false, placeholder: '' },
-        { _id: "789", widgetType: "HTML", name: 'html name', pageId: "323", size: "<p>Lorem ipsum</p>", text: "",
-            url: "", width: "", height: 100, rows: 0, class: '', icon: '', deletable: false, formatted: false,
-            placeholder: '' }
-    ];
+    // widgets = [
+    //     { _id: "123", widgetType: "HEADER", name: ' ', pageId: "321", size: "1", text: "London terror attack: Police " +
+    //             "fired unprecedented number of rounds", url: "", width: "", height: 100, rows: 0, class: '', icon: '',
+    //         deletable: false, formatted: false, placeholder: ''},
+    //     { _id: "124", widgetType: "HEADER", name: ' ', pageId: "321", size: "3", text: "Counter terrorism officers " +
+    //             "patrol near the scene of the attack on London Bridge.", url: "", width: "", height: 100, rows: 0,
+    //         class: '', icon: '', deletable: false, formatted: false, placeholder: '' },
+    //     { _id: "125", widgetType: "IMAGE", pageId: "321", size: "", text: "", width: "100%",
+    //         url: 'http://i2.cdn.cnn.com/cnnnext/dam/assets/170604130220-41-london-bridge-incident-0604-gallery-exlarge-169.jpg',
+    //         width: "", height: 100, rows: 0, class: '', icon: '',
+    //         deletable: false, formatted: false, placeholder: '' },
+    //     { _id: "456", widgetType: "HTML", name: 'html name', pageId: "321", size: "", text: "<p>Lorem ipsum</p>",
+    //         url: "", width: "", height: 100, rows: 0, class: '', icon: '', deletable: false,
+    //         formatted: false, placeholder: ''},
+    //     { _id: "678", widgetType: "YOUTUBE", name: ' ', pageId: "321", size: "", text: "",
+    //         url: 'https://www.youtube.com/embed/APexI9Zb6iE/', width: "100%", height: 100, rows: 0, class: '', icon: '',
+    //         deletable: false, formatted: false, placeholder: '' },
+    //     { _id: "789", widgetType: "HTML", name: 'html name', pageId: "323", size: "<p>Lorem ipsum</p>", text: "",
+    //         url: "", width: "", height: 100, rows: 0, class: '', icon: '', deletable: false, formatted: false,
+    //         placeholder: '' }
+    // ];
 
     //var widgetModel = models.widgetModel;
+    var widgetModel = require('../model/widget/widget.model.server');
 
     var multer = require('multer'); // npm install multer --save
     var upload = multer({ dest: __dirname+'/../../dist/my-project/assets/uploads' });
@@ -66,19 +67,30 @@ module.exports= function(app){
         var mimetype = myFile.mimetype;
 
         var url = 'assets/uploads/' + filename;
-        console.log(url);
+        // console.log(url);
 
         // var widget = findWidgetById(widgetId);
 
         // var widget = { url: "assets/uploads/"+filename};
         //
         // var widget;
-        for (var i = 0; i < widgets.length; i++) {
-            if (widgets[i]._id === widgetId) {
-                widgets[i].url = url;
-                console.log(widgets[i].url);
+        widgetModel.findWidgetById(widgetId).then(
+            function (widget) {
+                widget.url = url;
+                widgetModel.updateWidget(widget).then(
+                    function() {
+                        res.sendStatus(200);
+                    }
+                )
             }
-        }
+        )
+        // for (var i = 0; i < widgets.length; i++) {
+        //     if (widgets[i]._id === widgetId) {
+        //         widgets[i].url = url;
+        //         console.log(widgets[i].url);
+        //     }
+        // }
+        // res.status(200);
         // widget.url = 'uploads/' + filename;
         //
         // /*widgetModel
@@ -95,27 +107,32 @@ module.exports= function(app){
         // //res.redirect("http://localhost:3200/user/website/"+websiteId+"/page/"+pageId+"/widget/"+widgetId);
     }
 
-    function array_swap(arr, old_index, new_index) {
-        while (old_index < 0) {
-            old_index += arr.length;
-        }
-        while (new_index < 0) {
-            new_index += arr.length;
-        }
-        if (new_index >= arr.length) {
-            var k = new_index - arr.length + 1;
-            while (k--) {
-                arr.push(undefined);
-            }
-        }
-        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-    };
+    // function array_swap(arr, old_index, new_index) {
+    //     while (old_index < 0) {
+    //         old_index += arr.length;
+    //     }
+    //     while (new_index < 0) {
+    //         new_index += arr.length;
+    //     }
+    //     if (new_index >= arr.length) {
+    //         var k = new_index - arr.length + 1;
+    //         while (k--) {
+    //             arr.push(undefined);
+    //         }
+    //     }
+    //     arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+    // };
 
     function reorderWidgets(req,res) {
         var startIndex = parseInt(req.query["start"]);
         var endIndex = parseInt(req.query["end"]);
-
-        array_swap(widgets, startIndex, endIndex);
+        var pageId = req.params.pageId;
+        widgetModel.reorderWidget(pageId, startIndex, endIndex).then(
+            // function (err) {
+            //     res.sendStatus(400).send(err);
+            // }
+        )
+        // array_swap(widgets, startIndex, endIndex);
         // res.sendStatus(200);
     }
 
@@ -123,50 +140,75 @@ module.exports= function(app){
     function createWidget(req,res) {
         var pageId = req.params.pageId;
         var widget = req.body;
-        for (var i = 0; i < widgets.length; i++) {
-            if (widgets[i].pageId === pageId && widgets[i].name === widget.name
-                && widgets[i].widgetType === widget.widgetType && widgets[i]._id === widget._id) {
-                res.status(404).send("This page has already existed.");
-                return;
+        widgetModel.createWidget(pageId, widget).then(
+            function (widget) {
+                res.json(widget);
+            },
+            function (err) {
+                res.sendStatus(400).send(err);
             }
-        }
-        widget._id = Math.random().toString();
-        widgets.push(widget);
-        res.json(widget);
+        );
+        // for (var i = 0; i < widgets.length; i++) {
+        //     if (widgets[i].pageId === pageId && widgets[i].name === widget.name
+        //         && widgets[i].widgetType === widget.widgetType && widgets[i]._id === widget._id) {
+        //         res.status(404).send("This page has already existed.");
+        //         return;
+        //     }
+        // }
+        // widget._id = Math.random().toString();
+        // widgets.push(widget);
+        // res.json(widget);
         //res.json(findAllWidgetsForPage2(pageId));
     }
 
-    function findAllWidgetsForPage2(pageId) {
-        widgetSet = [];
-        for (var i = 0; i < widgets.length; i++) {
-            if (widgets[i].pageId === pageId) {
-                widgetSet.push(widgets[i]);
-            }
-        }
-        return widgetSet;
-    }
+    // function findAllWidgetsForPage2(pageId) {
+    //     widgetSet = [];
+    //     for (var i = 0; i < widgets.length; i++) {
+    //         if (widgets[i].pageId === pageId) {
+    //             widgetSet.push(widgets[i]);
+    //         }
+    //     }
+    //     return widgetSet;
+    // }
 
 
     function findAllWidgetsForPage(req,res) {
         var pageId = req.params.pageId;
-        var resultSet = [];
-        for(var i = 0; i < widgets.length; i++){
-            if(widgets[i].pageId === pageId){
-                resultSet.push(widgets[i]);
+        widgetModel.findAllWidgetsForPage(pageId).then(
+            function (widgets) {
+                res.json(widgets);
+            },
+            function (err) {
+                res.sendStatus(400).send(err);
             }
-        }
-        res.json(resultSet);
-        return;
+        )
+
+        // var resultSet = [];
+        // for(var i = 0; i < widgets.length; i++){
+        //     if(widgets[i].pageId === pageId){
+        //         resultSet.push(widgets[i]);
+        //     }
+        // }
+        // res.json(resultSet);
+        // return;
     }
 
     function findWidgetById(req,res) {
         var widgetId  = req.params.widgetId;
-        for (var i = 0; i < widgets.length; i++) {
-            if (widgets[i]._id === widgetId) {
-                res.json(widgets[i]);
-                return;
+        widgetModel.findWidgetById(widgetId).then(
+            function (widget) {
+                res.json(widget);
+            },
+            function (err) {
+                res.sendStatus(400).send(err);
             }
-        }
+        )
+        // for (var i = 0; i < widgets.length; i++) {
+        //     if (widgets[i]._id === widgetId) {
+        //         res.json(widgets[i]);
+        //         return;
+        //     }
+        // }
     }
 
     // function findWidgetById(widgetId) {
@@ -180,38 +222,64 @@ module.exports= function(app){
     function updateWidget(req,res) {
         var widgetId  = req.params.widgetId;
         var widget = req.body;
-        for (const i in this.widgets) {
-            if (this.widgets[i]._id === widgetId) {
-                switch (widget.widgetType) {
-                    case 'HEADER':
-                        this.widgets[i].text = widget.text;
-                        this.widgets[i].size = widget.size;
-                        return;
-                    case 'IMAGE':
-                        this.widgets[i].text = widget.text;
-                        this.widgets[i].url = widget.url;
-                        this.widgets[i].width = widget.width;
-                        return;
-                    case 'YOUTUBE':
-                        this.widgets[i].text = widget.text;
-                        this.widgets[i].url = widget.url;
-                        this.widgets[i].width = widget.width;
-                        return;
-                }
+        widgetModel.updateWidget(widgetId, widget).then(
+            function (widget) {
+                return res.json(widget);
+            },
+            function (err) {
+                res.json(err);
             }
-        }
+        );
+        // for (const i in this.widgets) {
+        //     if (this.widgets[i]._id === widgetId) {
+        //         switch (widget.widgetType) {
+        //             case 'HEADER':
+        //                 this.widgets[i].text = widget.text;
+        //                 this.widgets[i].size = widget.size;
+        //                 res.json(this.widgets[i]);
+        //                 return;
+        //             case 'IMAGE':
+        //                 this.widgets[i].text = widget.text;
+        //                 this.widgets[i].url = widget.url;
+        //                 this.widgets[i].width = widget.width;
+        //                 res.json(this.widgets[i]);
+        //                 return;
+        //             case 'YOUTUBE':
+        //                 this.widgets[i].text = widget.text;
+        //                 this.widgets[i].url = widget.url;
+        //                 this.widgets[i].width = widget.width;
+        //                 res.json(this.widgets[i]);
+        //                 return;
+        //         }
+        //     }
+        // }
     }
 
     function deleteWidget(req,res) {
         var widgetId  = req.params.widgetId;
-        for(var i = 0; i < this.widgets.length; i++) {
-            if (this.widgets[i]._id === widgetId) {
-                var pageId = this.widgets[i].pageId;
-                this.widgets.splice(i, 1);
-                console.log(widgetId);
-                res.json(findAllWidgetsForPage2(pageId));
-                return;
-            }
-        }
+        widgetModel.findWidgetById(widgetId).then(function (widget) {
+            widgetModel.updatePosition(widget.pageId, widget.position).then(function (widgets) {
+                widgetModel.deleteWidget(widgetId).then(function (status) {
+                    res.send(status);
+                });
+            })
+        });
+        // widgetModel.deleteWidget(widgetId).then(
+        //     function (widget) {
+        //         res.json(widget);
+        //     },
+        //     function (err) {
+        //         res.sendStatus(400).send(err);
+        //     }
+        // )
+        // for(var i = 0; i < this.widgets.length; i++) {
+        //     if (this.widgets[i]._id === widgetId) {
+        //         var pageId = this.widgets[i].pageId;
+        //         this.widgets.splice(i, 1);
+        //         console.log(widgetId);
+        //         res.json(findAllWidgetsForPage2(pageId));
+        //         return;
+        //     }
+        // }
     }
 };

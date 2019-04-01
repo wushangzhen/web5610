@@ -4,6 +4,7 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const multer = require('multer');
 const app = express();
 
 app.use(bodyParser.json());
@@ -28,6 +29,12 @@ app.set('port', port);
 // Create HTTP server
 const server = http.createServer(app);
 server.listen( port , () => console.log('Running on port 3200'));
+
+var connectionString = 'mongodb://127.0.0.1:27017/webdev';
+//var connectionString = 'mongodb://webappmaker:webappmaker@ds163181.mlab.com:63181/webappmaker';
+var mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+const client = mongoose.connect( connectionString, { useNewUrlParser: true });
 
 
 

@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 import {User} from '../../../models/user.model.client';
 import {UserService} from '../../../services/user.service.client';
@@ -13,7 +13,7 @@ import {SharedService} from '../../../services/shared.service';
 })
 export class ProfileComponent implements OnInit {
   @ViewChild('x') myProfileForm: NgForm;
-  user: User;
+  user;
   uid: String;
   username: String;
   email: String;
@@ -21,18 +21,20 @@ export class ProfileComponent implements OnInit {
   lastName: String;
   constructor(
       private userService: UserService,
-      private route: ActivatedRoute, private sharedService: SharedService) {
+      private route: ActivatedRoute, private sharedService: SharedService, private router: Router) {
     // this.user = new User('123', 'alice', 'qq');
     // this.user = new User('123', 'alice', 'alice');
   }
 
   updateUser() {
+    console.log(this.myProfileForm.value.username);
     this.user.email = this.myProfileForm.value.email;
+    this.user.username = this.myProfileForm.value.username;
     this.user.firstName = this.myProfileForm.value.firstName;
     this.user.lastName = this.myProfileForm.value.lastName;
     this.route.params.subscribe(params => {
       return this.userService.updateUser(this.user).subscribe(
-          (user: User) => {
+          (user: any) => {
             this.sharedService.user = user;
             this.user = user;
           }
@@ -40,11 +42,22 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  deleteUser() {
+    return this.userService.deleteUserById(this.uid).subscribe(
+        (user: any) => {
+          this.router.navigate(['/login']);
+        }
+    );
+  }
+
 
   ngOnInit() {
     this.user = this.sharedService.user;
-    // this.route.params.subscribe(params => {
-      // this.user = this.userService.findUserById(params['uid']);
+    this.route.params.subscribe(params => {
+      this.uid = params['uid'];
+    });
+    // this.user = this.userService.findUserById(params['uid']);
+
     // this.userService.findUserById(this.user._id)
     //     .subscribe(data => {
     //       console.log('in login comp...');
