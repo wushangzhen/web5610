@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="738b9d0e-e3e5-4d36-826d-98cad2df008a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/403a49a6b5356b52daf76362e014a51d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/5bc47660ae066107106319604de70fa8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/6c78fa605e5552c42cc671bb2b0575c6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/8b041ba7a0cbfdbafce6a1cbd45c37cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/9e2a5143030a695aef1110264dcaee42" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/e88a637a94006831e0f533c0e15878f3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/fc93c4f53d467c935876f48bff1ed6d0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/main.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/polyfills.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/polyfills.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/runtime.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/styles.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/vendor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/vendor.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -129,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="514">
+              <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -612,12 +593,12 @@
       <workItem from="1550199695604" duration="95949000" />
       <workItem from="1551154498366" duration="1000" />
       <workItem from="1551406166254" duration="10376000" />
-      <workItem from="1552089160174" duration="154268000" />
+      <workItem from="1552089160174" duration="154942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311547000" />
+    <option name="totallyTimeSpent" value="312221000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1078,8 +1059,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="514">
+          <caret line="67" column="42" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
