@@ -14,11 +14,45 @@ import {SharedService} from '../../../../services/shared.service';
 })
 export class WidgetHtmlComponent implements OnInit {
 
-  widgetNew = {name: '', text: ''};
+    widgetNew: any = {
+        pageId: '',
+        type: 'HTML',
+        name: '',
+        text: '',
+        placeholder: '',
+        description: '',
+        url: '',
+        width: '',
+        height: '',
+        rows: 1,
+        size: 1,
+        class: '',
+        icon: '',
+        deletable:true,
+        formatted: true,
+        position: 0,
+    };
   error: string;
   alert: string;
   flag = false;
-  widget = {};
+    widget: any = {
+        pageId: '',
+        type: 'HTML',
+        name: '',
+        text: '',
+        placeholder: '',
+        description: '',
+        url: '',
+        width: '',
+        height: '',
+        rows: 1,
+        size: 1,
+        class: '',
+        icon: '',
+        deletable:true,
+        formatted: true,
+        position: 0,
+    };
   userId: string;
   websiteId: string;
   pageId: string;

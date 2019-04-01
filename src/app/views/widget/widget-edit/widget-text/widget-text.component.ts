@@ -16,7 +16,24 @@ export class WidgetTextComponent implements OnInit {
   pageId: string;
   widgetId: string;
   userId: string;
-  widget = {placeholder: '', };
+    widget: any = {
+        pageId: '',
+        type: 'HTML',
+        name: '',
+        text: '',
+        placeholder: '',
+        description: '',
+        url: '',
+        width: '',
+        height: '',
+        rows: 1,
+        size: 1,
+        class: '',
+        icon: '',
+        deletable:true,
+        formatted: true,
+        position: 0,
+    };
 
   constructor(private widgetService: WidgetService, private router: Router, private activatedRoute: ActivatedRoute) { }
 

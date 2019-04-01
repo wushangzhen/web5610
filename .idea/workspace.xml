@@ -2,46 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="738b9d0e-e3e5-4d36-826d-98cad2df008a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment/services/page.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment/services/page.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment/services/user.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment/services/user.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment/services/webiste.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment/services/webiste.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment/services/widget.service.server.js" beforeDir="false" afterPath="$PROJECT_DIR$/assignment/services/widget.service.server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/my-project/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/my-project/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/my-project/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/my-project/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/my-project/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/models/user.model.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/user.model.client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/page.service.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/page.service.client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/shared.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/shared.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/user.service.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/user.service.client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/website.service.client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/website.service.client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/pages/page-edit/page-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/pages/page-edit/page-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/pages/page-edit/page-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/pages/page-edit/page-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/pages/page-new/page-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/pages/page-new/page-new.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/usr/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/usr/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/usr/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/usr/profile/profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/usr/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/usr/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/usr/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/usr/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/website/website-edit/website-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/website/website-edit/website-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/website/website-edit/website-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/website/website-edit/website-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/website/website-list/website-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/website/website-list/website-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-chooser/widget-chooser.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-chooser/widget-chooser.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-chooser/widget-chooser.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-chooser/widget-chooser.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-header/widget-header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-header/widget-header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-image/widget-image.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-image/widget-image.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-image/widget-image.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-image/widget-image.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-list/widget-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-list/widget-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-list/widget-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-list/widget-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-list/widget-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-list/widget-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/403a49a6b5356b52daf76362e014a51d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/5bc47660ae066107106319604de70fa8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/6c78fa605e5552c42cc671bb2b0575c6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/8b041ba7a0cbfdbafce6a1cbd45c37cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/9e2a5143030a695aef1110264dcaee42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/e88a637a94006831e0f533c0e15878f3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/assets/uploads/fc93c4f53d467c935876f48bff1ed6d0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/main.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/polyfills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/polyfills.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/runtime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/runtime.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/styles.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/vendor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/my-project/vendor.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -68,40 +49,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/services/page.service.client.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assignment/services/page.service.server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment/model/page/page.model.server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/views/website/website-edit/website-edit.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="60" column="37" lean-forward="true" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#59#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -118,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/views/usr/login/login.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="585">
@@ -131,9 +82,43 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/views/pages/page-list/page-list.component.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="448">
+              <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="54" column="6" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="54" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-image/widget-image.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#59#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-chooser/widget-chooser.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="4" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="35" selection-end-column="4" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -141,9 +126,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/views/pages/page-list/page-list.component.html">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -237,11 +229,9 @@
         <option value="$PROJECT_DIR$/src/app/views/widget/widget-chooser/widget-chooser.component.ts" />
         <option value="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-edit.component.ts" />
         <option value="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-edit.component.html" />
-        <option value="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts" />
         <option value="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.html" />
         <option value="$PROJECT_DIR$/src/app/views/widget/widget-list/widget-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/views/widget/widget-list/widget-list.component.html" />
-        <option value="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts" />
         <option value="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.html" />
         <option value="$PROJECT_DIR$/src/app/views/usr/profile/profile.component.html" />
         <option value="$PROJECT_DIR$/src/app/views/website/website-edit/website-edit.component.html" />
@@ -254,6 +244,8 @@
         <option value="$PROJECT_DIR$/src/app/views/pages/page-new/page-new.component.ts" />
         <option value="$PROJECT_DIR$/src/app/views/usr/profile/profile.component.ts" />
         <option value="$PROJECT_DIR$/src/app/views/usr/login/login.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts" />
       </list>
     </option>
   </component>
@@ -620,12 +612,12 @@
       <workItem from="1550199695604" duration="95949000" />
       <workItem from="1551154498366" duration="1000" />
       <workItem from="1551406166254" duration="10376000" />
-      <workItem from="1552089160174" duration="153621000" />
+      <workItem from="1552089160174" duration="154268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310900000" />
+    <option name="totallyTimeSpent" value="311547000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -842,16 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-chooser/widget-chooser.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignment/services/widget.service.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -907,26 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-image/widget-image.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-251">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-341">
@@ -938,23 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="114" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="114" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="46" column="57" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1088,6 +1033,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="46" column="25" lean-forward="true" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-chooser/widget-chooser.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="4" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="35" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-image/widget-image.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-html/widget-html.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="54" column="6" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="54" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/views/widget/widget-edit/widget-text/widget-text.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>

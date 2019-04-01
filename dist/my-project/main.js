@@ -2063,9 +2063,43 @@ var WidgetHtmlComponent = /** @class */ (function () {
         this.activatedRoute = activatedRoute;
         this.widgetService = widgetService;
         this.router = router;
-        this.widgetNew = { name: '', text: '' };
+        this.widgetNew = {
+            pageId: '',
+            type: 'HTML',
+            name: '',
+            text: '',
+            placeholder: '',
+            description: '',
+            url: '',
+            width: '',
+            height: '',
+            rows: 1,
+            size: 1,
+            class: '',
+            icon: '',
+            deletable: true,
+            formatted: true,
+            position: 0,
+        };
         this.flag = false;
-        this.widget = {};
+        this.widget = {
+            pageId: '',
+            type: 'HTML',
+            name: '',
+            text: '',
+            placeholder: '',
+            description: '',
+            url: '',
+            width: '',
+            height: '',
+            rows: 1,
+            size: 1,
+            class: '',
+            icon: '',
+            deletable: true,
+            formatted: true,
+            position: 0,
+        };
     }
     WidgetHtmlComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2410,7 +2444,24 @@ var WidgetTextComponent = /** @class */ (function () {
         this.router = router;
         this.activatedRoute = activatedRoute;
         this.flag = false; // setting error flag as false by default
-        this.widget = { placeholder: '', };
+        this.widget = {
+            pageId: '',
+            type: 'HTML',
+            name: '',
+            text: '',
+            placeholder: '',
+            description: '',
+            url: '',
+            width: '',
+            height: '',
+            rows: 1,
+            size: 1,
+            class: '',
+            icon: '',
+            deletable: true,
+            formatted: true,
+            position: 0,
+        };
     }
     WidgetTextComponent.prototype.ngOnInit = function () {
         var _this = this;
