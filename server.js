@@ -9,7 +9,14 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
+const passport = require('passport');
+const secret = !!process.env.SESSION_SECRET ? process.env.SESSION_SECRET : 'local_secret';
+app.use(cookieParser());
+app.use(session({ secret: secret }));
+app.use(passport.initialize());
+app.use(passport.session());
 // Point static path to dist -- For building -- REMOVE
 //app.use(express.static(path.join(__dirname, 'dist/my-project')));
 app.use(express.static(path.join(__dirname, 'dist/my-project')));
@@ -30,11 +37,13 @@ app.set('port', port);
 const server = http.createServer(app);
 server.listen( port , () => console.log('Running on port 3200'));
 
-//var connectionString = 'mongodb://127.0.0.1:27017/webdev';
+// var connectionString = 'mongodb://127.0.0.1:27017/webdev';
 var connectionString = 'mongodb://heroku_qp36wfd6:qlo0doahrrjie1en3720iffsce@ds049744.mlab.com:49744/heroku_qp36wfd6';
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 const client = mongoose.connect( connectionString, { useNewUrlParser: true });
+
+
 
 
 

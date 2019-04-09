@@ -3,12 +3,71 @@ import {User} from '../models/user.model.client';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {SharedService} from './shared.service';
+// import {RequestOptions} from 'http';
 import 'rxjs/Rx';
 @Injectable()
 export class UserService {
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private sharedService: SharedService, private router: Router) { }
     baseUrl = environment.baseUrl;
+    // options = new RequestOptions();
 
+    loggedIn() {
+        return this.http.post(this.baseUrl + 'api/loggedIn', '', {withCredentials: true})
+            .map(
+                (data: any) => {
+                    // const data = res.json();
+                    if (data !== 0) {
+                        this.sharedService.user = data;
+                        return true;
+                    } else {
+                        this.router.navigate(['/login']);
+                        return false;
+                    }
+                }
+            );
+    }
+
+    login(username, password) {
+        // this.options.withCredentials = true;
+        const body = {
+            username: username,
+            password: password
+        };
+        return this.http.post(this.baseUrl + 'api/login', body, {withCredentials: true})
+            .map(
+                (res: any) => {
+                    // const data = res.json();
+                    return res;
+                }
+            );
+    }
+
+    logout() {
+        return this.http.post(this.baseUrl + 'api/logout', '', {withCredentials: true});
+            // .map(
+            //     (res: any) => {
+            //         const data = res.json();
+            //         console.log(data);
+            //         return data;
+            //     }
+            // );
+    }
+
+    register(username, password) {
+        const body = {
+            username: username,
+            password: password
+        };
+        return this.http.post(this.baseUrl + 'api/register', body, {withCredentials: true})
+            .map(
+                (res: any) => {
+                    // const data = res.json();
+                    console.log(res);
+                    return res;
+                }
+            );
+    }
     createUser(user: User) {
         // console.log(this.http.post<User>(this.baseUrl + 'api/user/', user));
         return this.http.post(this.baseUrl + 'api/user/', user);

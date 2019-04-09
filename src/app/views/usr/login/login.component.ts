@@ -31,15 +31,27 @@ export class LoginComponent implements OnInit {
     // if (user) {
     //   this.router.navigate(['profile/', user._id]);
     // }
-    this.userService.findUserByCredential(this.username, this.password)
-        .subscribe((user: User) => {
-          if (user) {
-            this.sharedService.user = user;
-            this.router.navigate(['/profile', user._id]);
-          } else {
-            alert(this.username + ' invalid!');
-          }
-        });
+
+    this.userService.login(this.username, this.password).subscribe(
+        (data: any) => {
+          this.sharedService.user = data;
+          this.router.navigate(['/profile']);
+        },
+        (err: any) => {
+          console.log(err);
+        }
+    );
+
+
+    // this.userService.findUserByCredential(this.username, this.password)
+    //     .subscribe((user: User) => {
+    //       if (user) {
+    //         this.sharedService.user = user;
+    //         this.router.navigate(['/profile', user._id]);
+    //       } else {
+    //         alert(this.username + ' invalid!');
+    //       }
+    //     });
   }
 
   ngOnInit() {

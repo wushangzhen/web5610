@@ -6,7 +6,7 @@ import {Widget} from '../models/widget.model.client';
 @Injectable()
 
 export class SharedService {
-    user: any;
+    user: any = '';
     websites: Website[];
     pages: Page[];
     widgets: Widget[];

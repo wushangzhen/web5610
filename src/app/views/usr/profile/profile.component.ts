@@ -26,8 +26,15 @@ export class ProfileComponent implements OnInit {
     // this.user = new User('123', 'alice', 'alice');
   }
 
+  logout() {
+    this.userService.logout().subscribe(
+        (data: any) => {
+          this.router.navigate(['/login']);
+        }
+    );
+  }
+
   updateUser() {
-    console.log(this.myProfileForm.value.username);
     this.user.email = this.myProfileForm.value.email;
     this.user.username = this.myProfileForm.value.username;
     this.user.firstName = this.myProfileForm.value.firstName;
@@ -54,7 +61,8 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.user = this.sharedService.user;
     this.route.params.subscribe(params => {
-      this.uid = params['uid'];
+      // this.uid = params['uid'];
+      this.uid = this.user._id;
     });
     // this.user = this.userService.findUserById(params['uid']);
 
